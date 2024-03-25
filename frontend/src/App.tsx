@@ -41,22 +41,32 @@ function App() {
     })
   }
 
+  function Resume() {
+    return (
+      <div>
+          <div className="is-individual">
+            <label>
+              <input
+                type="checkbox"
+                checked={!is_individual_payment}
+                onChange={() => setIsIndividual(!is_individual_payment)}
+                />
+                <span>Pagar en partes iguales</span>
+            </label>
+          </div>
+          <ul className="bill-list">
+            <FriendBill />
+          </ul>
+          <button onClick={payBill}>Pagar: ${total}</button>
+        </div>
+    )
+  }
+
   return (
     <>
-      <div className="is-individual">
-        <label>
-          <input
-            type="checkbox"
-            checked={!is_individual_payment}
-            onChange={() => setIsIndividual(!is_individual_payment)}
-            />
-            <span>Pagar en partes iguales</span>
-        </label>
+      <div>
+        {hasValues ? <Resume /> : <div>Sin ordenes :)</div>}
       </div>
-      <ul className="bill-list">
-        <FriendBill />
-      </ul>
-      {hasValues && <button onClick={payBill}>Pagar: ${total}</button>}
     </>
   )
 }
