@@ -64,9 +64,9 @@ Para seguir las mejores prácticas. El proyecto está utilizando el Patrón de D
 ![ddd-layers.png](https://eraser.imgix.net/workspaces/EtmPQnoTnRa2bflkvGpd/sryDWTtHe6fe5632Wc8QLjPd2lU2/hPcZW8osOsh9F5Cj6UcQC.png?ixlib=js-3.7.0 "ddd-layers.png")
 
 ## Project Structure
-- **Context**: you can see this folder as the core or main module of the current project. Inside this module you will find the next structure:
+- **src/beer**: you can see this folder as the core or main module of the current project. Inside this module you will find the next structure:
 ```
-context/
+src/beer/
 ├── axiom/
 │   ├── entities/
 │   ├── repositories/
