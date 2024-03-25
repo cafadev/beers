@@ -9,8 +9,8 @@ class BeerRepositoryInMemory(BeerRepository):
 
     def __init__(self):
         beer1 = Beer(id=1, name='Heineken', price=5.0)
-        beer2 = Beer(id=2,name='Stella Artois', price=4.5)
-        beer3 = Beer(id=2,name='Redds', price=4.5)
+        beer2 = Beer(id=2, name='Stella Artois', price=4.5)
+        beer3 = Beer(id=3, name='Redds', price=4.5)
 
         self.__beers: dict[str, Beer] = {
             parse_id(beer1.id): beer1,
