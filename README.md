@@ -1,5 +1,15 @@
 # Getting Started
 
+## Frontend
+
+Para visualizar el frontend ejecuta:
+
+```yarn install```
+
+```yarn dev```
+
+Y visita: http://localhost:5174/
+
 ## Instalación con docker
 
 El proyecto está utilizando docker para configurar rápidamente el entorno en tu máquina. Por lo tanto, necesitas tener docker + docker-compose instalados. Si estás usando un sistema similar a UNIX, simplemente ejecuta los siguientes comandos en tu máquina.
@@ -49,7 +59,7 @@ Una vez que tengas el servidor en funcionamiento, puedes interactuar con los sig
 `[POST] api/v1/orders/`: para agregar un nuevo elemento a la orden, envia `beer_id`, `friend_id`, `quantity` en el payload del request
 
 # Development Guidelines
-Para seguir las mejores prácticas. El proyecto está utilizando el Patrón de Diseño de Domain Drive Design + Patrón de Command Responsibility Segregation, que son excelentes para garantizar los principios de SOLID. Puedes seguir la imagen a continuación para entender la arquitectura del proyecto.
+Para seguir las mejores prácticas. El proyecto está utilizando el Patrón de Diseño de Domain Driven Design + Patrón de Command Responsibility Segregation, que son excelentes para garantizar los principios de SOLID. Puedes seguir la imagen a continuación para entender la arquitectura del proyecto.
 
 ![ddd-layers.png](https://eraser.imgix.net/workspaces/EtmPQnoTnRa2bflkvGpd/sryDWTtHe6fe5632Wc8QLjPd2lU2/hPcZW8osOsh9F5Cj6UcQC.png?ixlib=js-3.7.0 "ddd-layers.png")
 
