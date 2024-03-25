@@ -14,12 +14,7 @@ class Order:
     def total_by_friend(self) -> dict[str, float]:
         amount_by_friend: dict[str, float] = {}
 
-        if self.is_individual_payment:
-            for order in self.items:
-                amount_by_friend[order.friend.name] = amount_by_friend.get(str(order.friend.id), 0) + order.beer.price * order.quantity
-
-        else: 
-            total = sum([order.beer.price * order.quantity for order in self.items])
-            amount_by_friend = {order.friend.name: total for order in self.items}
+        for order in self.items:
+            amount_by_friend[order.friend.name] = amount_by_friend.get(str(order.friend.name), 0) + order.beer.price * order.quantity
 
         return amount_by_friend

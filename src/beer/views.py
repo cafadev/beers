@@ -76,8 +76,11 @@ class OrderAPIView(views.APIView):
 class OrderCalculateTotalAPIView(views.APIView):
 
     def get(self, request):
+        is_individual_payment = request.query_params.get('is_individual_payment', 'false')
+        is_individual_payment = is_individual_payment.lower() == 'true'
+
         calculate_total_command = CalculateTotalCommand(
-            is_individual_payment=request.query_params.get('is_individual_payment', False)
+            is_individual_payment=is_individual_payment
         )
         total = calculate_total.execute(calculate_total_command)
 
@@ -87,8 +90,11 @@ class OrderCalculateTotalAPIView(views.APIView):
 class OrderPayAPIView(views.APIView):
 
     def post(self, request):
+        is_individual_payment = request.query_params.get('is_individual_payment', 'false')
+        is_individual_payment = is_individual_payment.lower() == 'true'
+
         process_payment_command = ProcessPaymentCommand(
-            is_individual_payment=request.data.get('is_individual_payment', False)
+            is_individual_payment=is_individual_payment
         )
         process_payment.execute(process_payment_command)
 
