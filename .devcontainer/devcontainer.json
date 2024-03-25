@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.191.1/containers/python-3-postgres
+// Update the VARIANT arg in docker-compose.yml to pick a Python version: 3, 3.8, 3.7, 3.6
+{
+  "name": "${localEnv:COMPOSE_PROJECT_NAME}",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/home/app/app",
+  // Set *default* container specific settings.json values on container create.
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": null,
+        "files.exclude": {
+          "**/.git": true,
+          "**/.svn": true,
+          "**/.hg": true,
+          "**/CVS": true,
+          "**/.DS_Store": true,
+          "**/Thumbs.db": true,
+          // "**/.venv": true
+        }
+      },
+      "extensions": [
+		"ms-python.vscode-pylance",
+		"thebarkman.vscode-djaneiro",
+		"njpwerner.autodocstring",
+		"charliermarsh.ruff",
+		"bungcip.better-toml",
+		"rangav.vscode-thunder-client"
+	]
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": []
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "git config --global core.autocrlf true"
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  // "remoteUser": "vscode"
+}
